@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.*;
+
 /**
  *
  * @author riccardild
