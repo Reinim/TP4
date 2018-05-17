@@ -22,5 +22,9 @@ public class Instrument {
         this.valFonds = valFonds;
     }
     
+    public void ajoutFonds(Fonds obj) {
+        valFonds.add(obj);
+    }
+    
     
 }
