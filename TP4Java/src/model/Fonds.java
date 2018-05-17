@@ -9,7 +9,7 @@ package model;
  *
  * @author riccardild
  */
-public class Fonds {
+public class Fonds implements Comparable<Fonds>{
     private double amount;
     
     public Fonds() {
@@ -28,6 +28,7 @@ public class Fonds {
         this.amount = amount;
     }
     
+    @Override
     public int compareTo(Fonds o) {
         if(this.getAmount() == o.getAmount()){
             return 0;
