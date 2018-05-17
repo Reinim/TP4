@@ -5,7 +5,7 @@
  */
 package model;
 
-import controller.CustomException;
+import controller.FondInexistant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +23,7 @@ public class Portefeuille extends Exception {
         this.mapInstrument = new HashMap<>();
     }
     
-    double rechercheFonds(String key) throws CustomException
+    double rechercheFonds(String key) throws FondInexistant
     {
       
            if( this.mapFond.get(key) != null)
@@ -32,7 +32,7 @@ public class Portefeuille extends Exception {
            }
            
            else {
-               throw new CustomException();
+               throw new FondInexistant();
            }
 
     }
