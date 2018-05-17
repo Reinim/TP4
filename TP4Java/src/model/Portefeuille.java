@@ -5,10 +5,13 @@
  */
 package model;
 
+import java.util.Map;
+
 /**
  *
  * @author riccardild
  */
 public class Portefeuille {
-    
+    Map<String, Fonds> mapFond;
+    Map<String, Instrument> mapInstrument;
 }
