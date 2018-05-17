@@ -5,6 +5,7 @@
  */
 package model;
 
+import controller.FondExistant;
 import controller.FondInexistant;
 import controller.InstrumentInexistant;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class Portefeuille extends Exception {
         this.mapInstrument = new HashMap<>();
     }
     
-    double rechercheFonds(String key) throws FondInexistant
+   public double rechercheFonds(String key) throws FondInexistant
     {
       
            if( this.mapFond.get(key) != null)
@@ -41,7 +42,7 @@ public class Portefeuille extends Exception {
 
     }
     
-    List<Fonds> rechercheInstrument(String key) throws InstrumentInexistant
+    public List<Fonds> rechercheInstrument(String key) throws InstrumentInexistant
     {
       
            if( this.mapInstrument.containsKey(key) )
@@ -54,5 +55,42 @@ public class Portefeuille extends Exception {
            }
 
     }
+    
+    public void ajouterFonds(String key, double amount) throws FondExistant
+    {
+        //instancier à nouveau ??
+        
+        if( this.mapFond.containsKey(key) )
+           {
+            throw new FondExistant();
+           }
+        else
+        {
+            this.mapFond.put(key, new Fonds(amount));
+        }
+    }
+   ///A faire a partir d'ici
+    public void ajouterInstrument(String key, Fonds fond) throws InstrumentInexistant
+    {
+        //instancier à nouveau ??
+        
+        if( this.mapInstrument.containsKey(key) )
+           {
+            throw new InstrumentInexistant();
+           }
+        else
+        {
+           // this.mapFond.put(key, new Fonds(amount));
+        }
+    }
+    public void supprimerFonds(String key) throws FondInexistant
+    {
+       
+    }
+    public void supprimerInstrument(String key) throws InstrumentInexistant
+    {
+       
+    }
+    
 }
 
