@@ -13,6 +13,10 @@ import java.util.*;
  */
 public class Instrument {
     private List<Fonds> valFonds;
+
+    public List<Fonds> getValFonds() {
+        return valFonds;
+    }
     
     public Instrument() {
         this.valFonds = new ArrayList<>();

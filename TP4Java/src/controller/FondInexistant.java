@@ -9,6 +9,16 @@ package controller;
  *
  * @author theo
  */
-public class CustomException {
+public class FondInexistant extends Exception{
+   
+    public FondInexistant(String exc)
+    {
+        super(exc);
+    }
+    public FondInexistant()
+    {
+        super("Fond Inexistant");
+    }
     
 }
+
