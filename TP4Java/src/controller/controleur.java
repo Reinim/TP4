@@ -9,13 +9,10 @@ package controller;
  *
  * @author riccardild
  */
-public class TP4Java {
+public class controleur {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
 }
