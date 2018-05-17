@@ -19,9 +19,7 @@ public class Portefeuille extends Exception {
    private Map<String, Fonds> mapFond;
     private Map<String, Instrument> mapInstrument;
 
-    public Map<String, Instrument> getMapInstrument() {
-        return mapInstrument;
-    }
+    
      
 
     public Portefeuille() {
@@ -48,7 +46,7 @@ public class Portefeuille extends Exception {
       
            if( this.mapInstrument.containsKey(key) )
            {
-               return this.mapInstrument.get(key).();
+               return this.mapInstrument.get(key).getValFonds();
            }
            
            else {
