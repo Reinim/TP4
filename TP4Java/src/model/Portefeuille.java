@@ -6,7 +6,9 @@
 package model;
 
 import controller.FondInexistant;
+import controller.InstrumentInexistant;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +18,10 @@ import java.util.Map;
 public class Portefeuille extends Exception {
    private Map<String, Fonds> mapFond;
     private Map<String, Instrument> mapInstrument;
+
+    public Map<String, Instrument> getMapInstrument() {
+        return mapInstrument;
+    }
      
 
     public Portefeuille() {
@@ -33,6 +39,20 @@ public class Portefeuille extends Exception {
            
            else {
                throw new FondInexistant();
+           }
+
+    }
+    
+    List<Fonds> rechercheInstrument(String key) throws InstrumentInexistant
+    {
+      
+           if( this.mapInstrument.containsKey(key) )
+           {
+               return this.mapInstrument.get(key).();
+           }
+           
+           else {
+               throw new InstrumentInexistant();
            }
 
     }
