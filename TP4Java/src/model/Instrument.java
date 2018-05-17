@@ -1,11 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 package model;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -13,7 +15,7 @@ import java.util.*;
  */
 public class Instrument {
     private List<Fonds> valFonds;
-
+    
     public List<Fonds> getValFonds() {
         return valFonds;
     }
@@ -30,5 +32,8 @@ public class Instrument {
         valFonds.add(obj);
     }
     
+    public void triCollection () {
+        Collections.sort(valFonds);
+    }
     
 }
