@@ -16,22 +16,30 @@ import java.util.Collections;
 public class Instrument {
     private List<Fonds> valFonds;
     
-    public List<Fonds> getValFonds() {
-        return valFonds;
-    }
-    
+    /**
+     * Constructeur par défault
+     */
     public Instrument() {
         this.valFonds = new ArrayList<>();
     }
-    
+    /**
+     * Constructeur avec paramètre
+     * @param valFonds List de fonds
+     */
     public Instrument(ArrayList<Fonds> valFonds) {
         this.valFonds = valFonds;
+    }
+    
+    public List<Fonds> getValFonds() {
+        return valFonds;
     }
     
     public void ajoutFonds(Fonds obj) {
         valFonds.add(obj);
     }
-    
+    /**
+     * Trie la collection de Fonds par ordre croissant
+     */
     public void triCollection () {
         Collections.sort(valFonds);
     }

@@ -11,11 +11,16 @@ package model;
  */
 public class Fonds implements Comparable<Fonds>{
     private double amount;
-    
+    /**
+     * Constructeur par défault
+     */
     public Fonds() {
         this.amount = 0;
     }
-    
+    /**
+     * Constructeur avec paramètre
+     * @param amount Quantité de fonds
+     */
     public Fonds(double amount) {
         this.amount = amount;
     }
@@ -27,7 +32,11 @@ public class Fonds implements Comparable<Fonds>{
     public void setAmount(double amount) {
         this.amount = amount;
     }
-    
+    /**
+     * Compare deus objets de type Fonds
+     * @param o L'objet à comparer
+     * @return résultat de la comparaison
+     */
     @Override
     public int compareTo(Fonds o) {
         if(this.getAmount() == o.getAmount()){
@@ -40,7 +49,11 @@ public class Fonds implements Comparable<Fonds>{
             return -1;
         }
     }
-    
+    /**
+     * Compare deux objets de type Fonds
+     * @param o Objet à comparer
+     * @return résultat de la comparaison
+     */
     @Override
     public boolean equals(Object o) {
         if (o == this) return true;
@@ -50,7 +63,10 @@ public class Fonds implements Comparable<Fonds>{
         Fonds obj = (Fonds) o;
         return (this.getAmount() == obj.getAmount());
     }
-    
+    /**
+     * Accompagne l'Override de la méthode equals()
+     * @return nouveau hash
+     */
     @Override
     public int hashCode() {
         int hash = 3;
