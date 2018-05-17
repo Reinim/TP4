@@ -5,6 +5,7 @@
  */
 package model;
 
+import controller.CustomException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,8 +14,8 @@ import java.util.Map;
  * @author riccardild
  */
 public class Portefeuille extends Exception {
-    Map<String, Fonds> mapFond;
-    Map<String, Instrument> mapInstrument;
+   private Map<String, Fonds> mapFond;
+    private Map<String, Instrument> mapInstrument;
      
 
     public Portefeuille() {
@@ -22,18 +23,18 @@ public class Portefeuille extends Exception {
         this.mapInstrument = new HashMap<>();
     }
     
-   /* Fonds rechercheFonds(String key)
+    double rechercheFonds(String key) throws CustomException
     {
-       
-       try {
+      
+           if( this.mapFond.get(key) != null)
+           {
+               return this.mapFond.get(key).getAmount();
+           }
+           
+           else {
+               throw new CustomException();
+           }
 
-    
-
-  } catch (ArithmeticException e) {
-
-    System.out.println("Division par zéro !");
-
-  }
-       return this.mapFond.get(key);
-    }*/
+    }
 }
+
