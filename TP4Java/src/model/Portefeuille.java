@@ -7,7 +7,6 @@ package model;
 
 import controller.FondExistant;
 import controller.FondInexistant;
-import controller.InstrumentExistant;
 import controller.InstrumentInexistant;
 import java.util.HashMap;
 import java.util.List;
@@ -67,27 +66,47 @@ public class Portefeuille extends Exception {
         }
     }
    
-    public void ajouterInstrument(String key, Fonds fond) throws InstrumentInexistant, InstrumentExistant
+    public void ajouterInstrument(String key, Fonds fond) throws InstrumentInexistant
     {
        
         
-        if( this.mapInstrument.containsKey(key) )
+        if(!this.mapInstrument.containsKey(key) )
            {
+            this.mapInstrument.put(key, new Instrument());
             throw new InstrumentInexistant();
+            
            }
         else
         {
-           this.mapInstrument.put(key, new Instrument());
+           this.mapInstrument.get(key).ajoutFonds(fond); ///A verifier si ça marche
+           
         }
         
     }
     public void supprimerFonds(String key) throws FondInexistant
     {
+       try{
+           rechercheFonds(key);
+       }
+       catch(FondInexistant f){
+           throw new FondInexistant();
+          // System.out.println("Fond non suppressible");
+                   
+       }
        
+       this.mapFond.remove(key);
     }
     public void supprimerInstrument(String key) throws InstrumentInexistant
     {
-       
+       try{
+           rechercheInstrument(key);
+       }
+       catch(InstrumentInexistant i){
+           throw new InstrumentInexistant();
+                   
+       }
+       this.mapInstrument.get(key).getValFonds().removeAll(this.mapInstrument.get(key).getValFonds());
+       this.mapInstrument.remove(key);
     }
     
 }
