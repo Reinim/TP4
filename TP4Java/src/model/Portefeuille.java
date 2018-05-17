@@ -5,13 +5,35 @@
  */
 package model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  *
  * @author riccardild
  */
-public class Portefeuille {
+public class Portefeuille extends Exception {
     Map<String, Fonds> mapFond;
     Map<String, Instrument> mapInstrument;
+     
+
+    public Portefeuille() {
+        this.mapFond = new HashMap<>();
+        this.mapInstrument = new HashMap<>();
+    }
+    
+   /* Fonds rechercheFonds(String key)
+    {
+       
+       try {
+
+    
+
+  } catch (ArithmeticException e) {
+
+    System.out.println("Division par zéro !");
+
+  }
+       return this.mapFond.get(key);
+    }*/
 }
