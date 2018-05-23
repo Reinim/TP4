@@ -14,8 +14,17 @@ import model.*;
 public class Controleur {
     Portefeuille monPortefeuille = new Portefeuille();
     // Ici affichage onsole et controle des fonctionalités
-    public void init() {
+    public void init() throws FondExistant, InstrumentInexistant, FondInexistant {
         
+          
+        monPortefeuille.ajouterInstrument("YOLO", new Fonds(9700));
         
+        System.out.println(monPortefeuille.rechercheInstrument("YOLO"));
+                
+       // System.out.println(monPortefeuille.rechercheFonds("YOLO"));
+    }
+     void afficherInstrument()
+    {
+        System.out.println("");
     }
 }
