@@ -8,6 +8,7 @@ package model;
 import controller.FondExistant;
 import controller.FondInexistant;
 import controller.InstrumentInexistant;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,10 +70,11 @@ public class Portefeuille extends Exception {
     public void ajouterInstrument(String key, Fonds fond) throws InstrumentInexistant
     {
        
-        
+        ArrayList <Fonds> f = new ArrayList<>();
+        f.add(fond);
         if(!this.mapInstrument.containsKey(key) )
            {
-            this.mapInstrument.put(key, new Instrument());
+            this.mapInstrument.put(key, new Instrument(f));
             throw new InstrumentInexistant();
             
            }
@@ -83,6 +85,7 @@ public class Portefeuille extends Exception {
         }
         
     }
+    
     public void supprimerFonds(String key) throws FondInexistant
     {
        try{
@@ -96,6 +99,7 @@ public class Portefeuille extends Exception {
        
        this.mapFond.remove(key);
     }
+    
     public void supprimerInstrument(String key) throws InstrumentInexistant
     {
        try{
