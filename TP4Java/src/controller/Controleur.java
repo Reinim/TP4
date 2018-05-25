@@ -17,7 +17,11 @@ public class Controleur {
     public void init() throws FondExistant, InstrumentInexistant, FondInexistant {
         
           
-        monPortefeuille.ajouterInstrument("YOLO", new Fonds(9700));
+        try {
+            monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(9700));
+        } catch (InstrumentExistant ex) {
+            
+        }
         
        // System.out.println(monPortefeuille.rechercheInstrument("YOLO"));
                 
