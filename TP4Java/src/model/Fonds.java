@@ -74,4 +74,8 @@ public class Fonds implements Comparable<Fonds>{
         return hash;
     }
     
+    @Override
+    public String toString() {
+        return "" + this.amount;
+    }
 }
