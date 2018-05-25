@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -56,13 +58,10 @@ public class Portefeuille extends Exception {
     
     public void ajouterFonds(String key, double amount) throws FondExistant
     {
-        
-        if( this.mapFond.containsKey(key) )
-           {
+        try {
+            rechercheFonds(key);
             throw new FondExistant();
-           }
-        else
-        {
+        } catch (FondInexistant ex) {
             this.mapFond.put(key, new Fonds(amount));
         }
     }
