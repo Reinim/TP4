@@ -33,6 +33,7 @@ public class Portefeuille extends Exception {
         
         if( this.mapFond.get(key) != null)
         {
+            System.out.println(this.mapFond.get(key).getAmount());
             return this.mapFond.get(key).getAmount();
         }
         

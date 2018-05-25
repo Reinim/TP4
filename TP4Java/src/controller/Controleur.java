@@ -19,7 +19,7 @@ public class Controleur {
           
         monPortefeuille.ajouterInstrument("YOLO", new Fonds(9700));
         
-        System.out.println(monPortefeuille.rechercheInstrument("YOLO"));
+       // System.out.println(monPortefeuille.rechercheInstrument("YOLO"));
                 
        // System.out.println(monPortefeuille.rechercheFonds("YOLO"));
     }

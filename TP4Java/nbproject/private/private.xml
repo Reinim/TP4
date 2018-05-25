@@ -6,7 +6,10 @@
             <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/controller/InstrumentInexistant.java</file>
             <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/model/Fonds.java</file>
             <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/model/Instrument.java</file>
-            <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/controller/controleur.java</file>
+            <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/controller/InstrumentExistant.java</file>
+            <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/view/PortefeuilleUI.java</file>
+            <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/controller/FondExistant.java</file>
+            <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/controller/Controleur.java</file>
             <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/controller/FondInexistant.java</file>
             <file>file:/Users/theo/Documents/GitHub/TP4/TP4Java/src/model/Portefeuille.java</file>
         </group>
