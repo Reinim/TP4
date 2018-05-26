@@ -10,6 +10,7 @@ import controller.FondInexistant;
 import controller.InstrumentExistant;
 import controller.InstrumentInexistant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,29 +28,25 @@ public class Portefeuille extends Exception {
         this.mapInstrument = new HashMap<>();
     }
     
-   public double rechercheFonds(String key) throws FondInexistant
+    public double rechercheFonds(String key) throws FondInexistant
     {
-        
-        if( this.mapFond.get(key) != null)
+
+        if(this.mapFond.get(key) != null)
         {
-            System.out.println(this.mapFond.get(key).getAmount());
             return this.mapFond.get(key).getAmount();
         }
-        
         else {
             throw new FondInexistant();
         }
-        
     }
     
     public List<Fonds> rechercheInstrument(String key) throws InstrumentInexistant
     {
         
-        if( this.mapInstrument.containsKey(key) )
+        if(this.mapInstrument.containsKey(key))
         {
             return this.mapInstrument.get(key).getValFonds();
         }
-        
         else {
             throw new InstrumentInexistant();
         }
@@ -65,47 +62,40 @@ public class Portefeuille extends Exception {
             this.mapFond.put(key, new Fonds(amount));
         }
     }
-   
-    public void ajouterFondInstrument(String key, Fonds fond) throws InstrumentExistant
+    
+    public void ajouterFondInstrument(String key, Fonds fond)
     {
-       
+        
         try {
             rechercheInstrument(key);
             this.mapInstrument.get(key).ajoutFonds(fond); ///A verifier si ça marche
-            throw new InstrumentExistant();
         } catch (InstrumentInexistant ex) {
-            ArrayList<Fonds> f = new ArrayList<>();
+            ArrayList<Fonds> f = new ArrayList<>(Arrays.asList(fond));
             mapInstrument.put(key, new Instrument(f));
         }
-        
     }
     
-    public void supprimerFonds(String key) throws FondInexistant
+    public void supprimerFonds(String key)
     {
-       try{
-           rechercheFonds(key);
-       }
-       catch(FondInexistant f){
-           throw new FondInexistant();
-          // System.out.println("Fond non suppressible");
-                   
-       }
-       
-       this.mapFond.remove(key);
+        try{
+            rechercheFonds(key);
+            this.mapFond.remove(key);
+        }
+        catch(FondInexistant f){
+                       
+        }
     }
     
-    public void supprimerInstrument(String key) throws InstrumentInexistant
+    public void supprimerInstrument(String key)
     {
-       try{
-           rechercheInstrument(key);
-       }
-       catch(InstrumentInexistant i){
-           throw new InstrumentInexistant();
-                   
-       }
-       this.mapInstrument.get(key).getValFonds().removeAll(this.mapInstrument.get(key).getValFonds());
-       this.mapInstrument.remove(key);
+        try{
+            rechercheInstrument(key);
+            this.mapInstrument.get(key).getValFonds().removeAll(this.mapInstrument.get(key).getValFonds());
+            this.mapInstrument.remove(key);
+        }
+        catch(InstrumentInexistant i){
+            
+        }
     }
-    
 }
 
