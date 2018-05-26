@@ -17,14 +17,16 @@ public class Controleur {
     public void init() throws FondExistant, InstrumentInexistant, FondInexistant {
         
         
-        monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(9700));
+        monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(8700));
         monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(9432));
         monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(3330));
+        monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(3530));
+        monPortefeuille.ajouterFondInstrument("YOLO", new Fonds(10330));
         monPortefeuille.ajouterFonds("YOLO", 666);
+        monPortefeuille.triCollection("YOLO");
         System.out.println(monPortefeuille.rechercheInstrument("YOLO"));
         System.out.println(monPortefeuille.rechercheFonds("YOLO"));
         
-         
     }
     void afficherInstrument()
     {

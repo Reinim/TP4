@@ -7,7 +7,6 @@ package model;
 
 import controller.FondExistant;
 import controller.FondInexistant;
-import controller.InstrumentExistant;
 import controller.InstrumentInexistant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +29,7 @@ public class Portefeuille extends Exception {
     
     public double rechercheFonds(String key) throws FondInexistant
     {
-
+        
         if(this.mapFond.get(key) != null)
         {
             return this.mapFond.get(key).getAmount();
@@ -51,6 +50,16 @@ public class Portefeuille extends Exception {
             throw new InstrumentInexistant();
         }
         
+    }
+    
+    public void triCollection(String key) throws InstrumentInexistant {
+        if(this.mapInstrument.containsKey(key))
+        {
+            this.mapInstrument.get(key).triCollection();
+        }
+        else {
+            throw new InstrumentInexistant();
+        }
     }
     
     public void ajouterFonds(String key, double amount) throws FondExistant
@@ -82,7 +91,7 @@ public class Portefeuille extends Exception {
             this.mapFond.remove(key);
         }
         catch(FondInexistant f){
-                       
+            
         }
     }
     
